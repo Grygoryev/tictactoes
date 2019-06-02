@@ -1,0 +1,30 @@
+.board {
+  border: 1px solid #000;
+  display: inline-block;
+  margin-right: 30px; }
+  .board__row {
+    display: flex; }
+
+.square {
+  border: 1px solid #000;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer; }
+
+.app__title {
+  margin-bottom: 10px;
+  padding-left: 25px; }
+
+.app__container {
+  display: flex;
+  align-items: center; }
+
+.reset-game-btn {
+  padding: 5px 15px;
+  background-color: aliceblue;
+  border: 1px solid #000;
+  cursor: pointer; }

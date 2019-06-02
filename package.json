@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/Grygoryev/tictactoes/issues"
   },
-  "homepage": "https://github.com/Grygoryev/tictactoes#readme"
+  "homepage": "https://github.com/Grygoryev/tictactoes#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0-build.a271520",
+    "gulp-4.0.build": "^4.0.0-build.a271520",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1"
+  }
 }
