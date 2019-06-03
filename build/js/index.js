@@ -9,7 +9,6 @@ const xMark = 'X',
 let xIsNext = true
 let gameState = Array(9).fill(null)
 
-
 appTitle.innerHTML = (xIsNext ? xMark : oMark) + ' goes'
 
 squares.forEach( (square, i) => {
@@ -21,10 +20,10 @@ squares.forEach( (square, i) => {
       xIsNext = !xIsNext
       appTitle.innerHTML = (xIsNext ? xMark : oMark) + ' goes'
       gameState[i] = square.innerHTML
-      console.log(gameState)
+      checkDraw() 
+      checkWinner()
     }
 
-   
   })
 })
 
@@ -33,10 +32,9 @@ resetGameBtn.addEventListener('click', () => {
     square.innerHTML = ''
     xIsNext = true
     gameState = Array(9).fill(null)
+    appTitle.innerHTML = (xIsNext ? xMark : oMark) + ' goes'
   })
 })
-
-console.log(gameState)
 
 let checkWinner = function() {
   const winPos = [
@@ -49,5 +47,29 @@ let checkWinner = function() {
     [0, 4, 8],
     [2, 4, 6]
   ]
-  
+
+ for (let i = 0; i <= winPos.length; i++) {
+   for (let j = 0; j <= gameState.length; j++) {
+    if (
+        gameState[winPos[i][0]] == gameState[winPos[i][1]] && 
+        gameState[winPos[i][0]] == gameState[winPos[i][2]] &&
+        gameState[winPos[i][0]] != null 
+      ) {
+          
+        appTitle.innerHTML = gameState[winPos[i][0]] + ' has won'
+
+        return true
+    }
+   }
+ }
+ return false
+}
+
+let checkDraw = () => {
+ if (gameState.indexOf(null) == -1) {
+    appTitle.innerHTML = 'It\'s draw' 
+   return true
+ } 
+
+ return false
 }
